@@ -1,0 +1,60 @@
+q-2)
+a) head file1.txt
+output
+this is a file 1 of
+linux assignments
+zello
+hi
+zello
+hi zello
+hi
+zello
+hi
+
+b)
+ tail -5 file1.txt
+output
+zello
+hi
+zello
+hi
+zello zellog
+
+c)
+ head -15 numbers.txt
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+
+d)
+
+ tail -3 numbers.txt
+19
+2
+20
+
+e)
+ tr '[:lower:]' '[:upper:]' <file1.txt> output.txt
+
+f)
+ uniq duplicates.txt
+hello
+hi
+
+g)
+cdac@DESKTOP-1HPH067:~/linuxassignments$ uniq -c  fruits.txt
+      2 apple
+      3 orange
+      2 mango
