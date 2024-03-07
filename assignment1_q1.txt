@@ -1,0 +1,98 @@
+1)
+ cat file1.txt
+this
+is
+line 3
+line 4
+line 5
+line 6
+line 7
+line 8
+line 9
+line 10
+line 11
+abc
+abc
+
+2)
+cdac@DESKTOP-1HPH067:~/linux_assignments$ mkdir docs
+cdac@DESKTOP-1HPH067:~/linux_assignments$ ls -l
+total 8
+drwxr-xr-x 2 cdac cdac 4096 Mar  7 22:32 docs
+-rw-r--r-- 1 cdac cdac   82 Mar  7 22:30 file1.txt
+cdac@DESKTOP-1HPH067:~/linux_assignments$ cp file1.txt docs/
+cdac@DESKTOP-1HPH067:~/linux_assignments$ ls -l
+total 8
+drwxr-xr-x 2 cdac cdac 4096 Mar  7 22:34 docs
+-rw-r--r-- 1 cdac cdac   82 Mar  7 22:30 file1.txt
+cdac@DESKTOP-1HPH067:~/linux_assignments$ cd docs
+cdac@DESKTOP-1HPH067:~/linux_assignments/docs$ ls -l
+total 4
+-rw-r--r-- 1 cdac cdac 82 Mar  7 22:34 file1.txt
+cdac@DESKTOP-1HPH067:~/linux_assignments/docs$ mv file1.txt file2.txt
+cdac@DESKTOP-1HPH067:~/linux_assignments/docs$ ls -l
+total 4
+-rw-r--r-- 1 cdac cdac 82 Mar  7 22:34 file2.txt
+
+e)
+cdac@DESKTOP-1HPH067:~/linux_assignments/docs$ current_user=$(whoami)
+cdac@DESKTOP-1HPH067:~/linux_assignments/docs$ chown $current_user file2.txt
+
+f)
+
+cdac@DESKTOP-1HPH067:~$ tree linux_assignments
+linux_assignments
+├── docs
+│   └── file2.txt
+└── file1.txt
+
+1 directory, 2 files
+
+g)
+cdac@DESKTOP-1HPH067:~/linux_assignments$ find . -type f -name "*.txt"
+./docs/file2.txt
+./file1.txt
+cdac@DESKTOP-1HPH067:~/linux_assignments$ grep abc file1.txt
+abc
+abc
+
+h)
+cdac@DESKTOP-1HPH067:~/linux_assignments$ date
+Thu Mar  7 22:48:34 IST 2024
+
+i)
+cdac@DESKTOP-1HPH067:~/linux_assignments$ ip add show
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    inet 127.0.0.1/8 scope host lo
+       valid_lft forever preferred_lft forever
+    inet6 ::1/128 scope host
+       valid_lft forever preferred_lft forever
+2: eth0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1400 qdisc mq state UP group default qlen 1000
+    link/ether 00:15:5d:5d:e8:93 brd ff:ff:ff:ff:ff:ff
+    inet 172.20.48.234/20 brd 172.20.63.255 scope global eth0
+       valid_lft forever preferred_lft forever
+    inet6 fe80::215:5dff:fe5d:e893/64 scope link
+       valid_lft forever preferred_lft forever
+cdac@DESKTOP-1HPH067:~/linux_assignments$ ping 8.8.8.8
+PING 8.8.8.8 (8.8.8.8) 56(84) bytes of data.
+64 bytes from 8.8.8.8: icmp_seq=1 ttl=52 time=99.5 ms
+64 bytes from 8.8.8.8: icmp_seq=2 ttl=52 time=58.3 ms
+64 bytes from 8.8.8.8: icmp_seq=3 ttl=52 time=36.6 ms
+64 bytes from 8.8.8.8: icmp_seq=4 ttl=52 time=55.2 ms
+64 bytes from 8.8.8.8: icmp_seq=5 ttl=52 time=52.9 ms
+64 bytes from 8.8.8.8: icmp_seq=6 ttl=52 time=51.8 ms
+64 bytes from 8.8.8.8: icmp_seq=7 ttl=52 time=50.7 ms
+64 bytes from 8.8.8.8: icmp_seq=8 ttl=52 time=69.6 ms
+
+j)
+
+cdac@DESKTOP-1HPH067:~/linux_assignments$ zip -r docs.zip docs
+  adding: docs/ (stored 0%)
+  adding: docs/file2.txt (deflated 46%)
+
+  k)
+  cdac@DESKTOP-1HPH067:~/linux_assignments$ cat >> file1.txt
+last lines
+before update
+cdac@DESKTOP-1HPH067:~/linux_assignments$ sed -i 's/abc/ABC/g' file1.txt
